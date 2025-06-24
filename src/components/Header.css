@@ -1,0 +1,23 @@
+header {
+  background-color: var(--dark-green);
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header .logo img {
+  height: 80px;
+  margin-right: 1rem;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo span {
+  font-size: 48px;
+  font-family: var(--font-site-name);
+  text-transform: uppercase;
+}

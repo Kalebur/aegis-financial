@@ -9,8 +9,19 @@
   --font-default: "Inter";
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--mid-green);
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .App {
