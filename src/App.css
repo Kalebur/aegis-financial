@@ -1,3 +1,10 @@
+:root {
+  --dark-green: #00211c;
+  --mid-green: #00372f;
+  --light-green: #00b197;
+  --transparent-dark-green: rgba(0, 33, 28, 0.5);
+}
+
 .App {
   text-align: center;
 }
