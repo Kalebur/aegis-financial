@@ -17,6 +17,7 @@
 
 body {
   background-color: var(--mid-green);
+  font-family: var(--font-default);
 }
 
 a {

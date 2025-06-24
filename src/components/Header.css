@@ -21,3 +21,22 @@ header .logo span {
   font-family: var(--font-site-name);
   text-transform: uppercase;
 }
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+header nav a {
+  font-size: 48px;
+  transition: all 0.2s;
+}
+
+header nav ul li {
+  margin-left: 95px;
+}
+
+header nav a:hover {
+  color: var(--light-green);
+}
