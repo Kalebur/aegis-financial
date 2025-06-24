@@ -20,6 +20,7 @@ header .logo span {
   font-size: 48px;
   font-family: var(--font-site-name);
   text-transform: uppercase;
+  letter-spacing: 5%;
 }
 
 header nav ul {
