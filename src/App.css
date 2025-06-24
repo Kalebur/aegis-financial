@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 :root {
   --dark-green: #00211c;
   --mid-green: #00372f;
   --light-green: #00b197;
   --transparent-dark-green: rgba(0, 33, 28, 0.5);
+  --font-site-name: "Playfair Display";
+  --font-default: "Inter";
+}
+
+body {
+  background-color: var(--mid-green);
 }
 
 .App {
