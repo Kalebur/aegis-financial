@@ -5,9 +5,6 @@ footer {
   align-items: center;
   color: #fff;
   background-color: var(--dark-green);
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
 }
 
 footer ul {
