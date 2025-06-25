@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+main {
+  min-height: calc(100vh - 150px);
+}
+
 .App {
   text-align: center;
 }
