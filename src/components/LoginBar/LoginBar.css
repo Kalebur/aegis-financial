@@ -1,4 +1,19 @@
 .right-sidebar {
   flex-basis: var(--sidebar-width);
-  background-color: crimson;
+  padding-top: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--transparent-dark-green);
+  border-radius: var(--rounded-corners);
+  border: 2px solid #fff;
+  padding: 30px 20px;
+  color: #fff;
+}
+
+.login-form p {
+  font-size: 36px;
+  margin-bottom: 25px;
 }

@@ -8,6 +8,7 @@
   --font-site-name: "Playfair Display";
   --font-default: "Inter";
   --sidebar-width: 15.78%;
+  --rounded-corners: 12px;
 }
 
 * {

@@ -1,6 +1,6 @@
 import "./Home.css";
-import { WeatherAndNewsBar } from "../components/WeatherAndNewsBar/WeatherAndNewsBar";
-import { LoginBar } from "../components/LoginBar/LoginBar";
+import { WeatherAndNewsBar } from "../components";
+import { LoginBar } from "../components";
 
 export const Home = () => {
   return (
