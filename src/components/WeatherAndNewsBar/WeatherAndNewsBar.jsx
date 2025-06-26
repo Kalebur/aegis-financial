@@ -27,7 +27,15 @@ export const WeatherAndNewsBar = () => {
   }, []);
   return (
     <section className="left-sidebar">
-      {location ? <WeatherWidget /> : "Loading weather and news articles..."}
+      {weather ? (
+        <WeatherWidget
+          current_temp={weather.current.temperature_2m}
+          temp_unit={weather.current_units.temperature_2m}
+          city={location.city}
+        />
+      ) : (
+        "Loading weather and news articles..."
+      )}
     </section>
   );
 };
