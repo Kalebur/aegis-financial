@@ -1,3 +1,4 @@
+import "./Home.css";
 import { WeatherAndNewsBar } from "../components/WeatherAndNewsBar/WeatherAndNewsBar";
 
 export const Home = () => {

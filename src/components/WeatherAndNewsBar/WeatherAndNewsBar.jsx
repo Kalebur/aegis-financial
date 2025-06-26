@@ -1,4 +1,7 @@
+import "./WeatherAndNewsBar.css";
+
 import { useState, useEffect } from "react";
+import { WeatherWidget } from "../WeatherWidget/WeatherWidget";
 
 export const WeatherAndNewsBar = () => {
   const [location, setLocation] = useState(null);
@@ -22,5 +25,9 @@ export const WeatherAndNewsBar = () => {
 
     fetchLocation();
   }, []);
-  return <section>WeatherAndNewsBar</section>;
+  return (
+    <section className="left-sidebar">
+      {location ? <WeatherWidget /> : "Loading weather and news articles..."}
+    </section>
+  );
 };
