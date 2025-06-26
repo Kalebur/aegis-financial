@@ -7,6 +7,7 @@
   --transparent-dark-green: rgba(0, 33, 28, 0.5);
   --font-site-name: "Playfair Display";
   --font-default: "Inter";
+  --sidebar-width: 15.78%;
 }
 
 * {

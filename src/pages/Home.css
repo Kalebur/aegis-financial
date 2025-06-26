@@ -1,3 +1,7 @@
 main {
   display: flex;
 }
+
+section.main-content {
+  flex-grow: 1;
+}

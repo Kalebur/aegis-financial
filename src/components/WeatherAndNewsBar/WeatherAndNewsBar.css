@@ -1,4 +1,4 @@
 .left-sidebar {
-  flex-basis: 15.78%;
+  flex-basis: var(--sidebar-width);
   padding: 20px 14px;
 }
