@@ -20,15 +20,16 @@ app.get("/api/news", async (req, res) => {
     const xml = await response.text();
 
     const feed = await parser.parseString(xml);
-    const sortedItems = feed.items
+    feed.items.sort((a, b) => {
+      return new Date(b.pubDate) - new Date(a.pubDate);
+    });
+    const filteredItems = feed.items
       .filter((item) => item.pubDate)
       .filter(
-        (item) => item.title && !item.title.toLowerCase().includes("obituary")
-      )
-      .sort((a, b) => {
-        return new Date(b.pubDate) - new Date(a.pubDate);
-      });
-    const topItems = feed.items.slice(0, 5);
+        (item) =>
+          item.title && !item.title.trim().toLowerCase().includes("obituary")
+      );
+    const topItems = filteredItems.slice(0, 5);
 
     res.json(topItems);
   } catch (err) {

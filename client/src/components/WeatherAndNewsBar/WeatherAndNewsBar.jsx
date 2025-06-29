@@ -3,6 +3,7 @@ import "./WeatherAndNewsBar.css";
 import { useFetch } from "../../hooks";
 import { WeatherWidget } from "..";
 import { useMemo } from "react";
+import { NewsWidget } from "../NewsWidget/NewsWidget";
 
 export const WeatherAndNewsBar = () => {
   const locationUri = "http://ip-api.com/json/";
@@ -20,23 +21,22 @@ export const WeatherAndNewsBar = () => {
     return `${locationData.city} ${locationData.region}`;
   }, [locationData]);
 
-  const newsUri = useMemo(() => {
-    if (!newsQuery) return null;
-    return `https://news.google.com/rss/search?q=${encodeURIComponent(
-      newsQuery
-    )}`;
-  }, [newsQuery]);
+  const apiLink = newsQuery
+    ? `http://localhost:5000/api/news?query=${newsQuery}`
+    : null;
+
+  const { data: news } = useFetch(apiLink);
 
   return (
     <section className="left-sidebar">
-      {weatherData.current ? (
+      {weatherData.current && news ? (
         <>
           <WeatherWidget
             current_temp={weatherData.current.temperature_2m}
             temp_unit={weatherData.current_units.temperature_2m}
             city={locationData.city}
           />
-          <p>{newsQuery ? `News for: ${newsQuery}` : ""}</p>
+          <NewsWidget articles={news} />
         </>
       ) : (
         "Loading weather and news articles..."

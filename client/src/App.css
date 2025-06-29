@@ -38,6 +38,10 @@ main {
   min-height: calc(100vh - 150px);
 }
 
+li {
+  list-style-type: none;
+}
+
 .App {
   text-align: center;
 }
@@ -45,6 +49,12 @@ main {
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.widget {
+  border: 2px solid white;
+  border-radius: var(--rounded-corners);
+  background-color: var(--transparent-dark-green);
 }
 
 @media (prefers-reduced-motion: no-preference) {
