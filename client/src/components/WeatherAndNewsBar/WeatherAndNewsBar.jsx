@@ -29,7 +29,7 @@ export const WeatherAndNewsBar = () => {
 
   return (
     <section className="left-sidebar">
-      {weatherData.current && news ? (
+      {weatherData.current && news.length ? (
         <>
           <WeatherWidget
             current_temp={weatherData.current.temperature_2m}

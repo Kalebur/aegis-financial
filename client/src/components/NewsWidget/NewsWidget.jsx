@@ -1,17 +1,21 @@
+import "./NewsWidget.css";
+
 export const NewsWidget = ({ articles }) => {
+  const sliceTitle = (title) => {
+    return title.slice(0, title.lastIndexOf("-") - 1);
+  };
+
   return (
-    <div className="widget">
+    <div className="widget news-widget">
       <p className="news-title">Local News</p>
       <ul id="news-list">
         {articles.map((article) => (
           <li key={article.guid}>
             {/* <p>{JSON.stringify(article)}</p> */}
-            <p>{article.pubDate}</p>
-            <p>
-              <a href={article.link} target="__blank">
-                {article.title}
-              </a>
-            </p>
+            <p className="published-date">{article.pubDate}</p>
+            <a className="headline-link" href={article.link} target="__blank">
+              {sliceTitle(article.title)}
+            </a>
           </li>
         ))}
       </ul>
