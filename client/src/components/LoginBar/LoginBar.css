@@ -17,3 +17,41 @@
   font-size: 36px;
   margin-bottom: 25px;
 }
+
+.login-form label {
+  font-size: 16px;
+  text-align: left;
+}
+
+.login-form input {
+  border-radius: var(--rounded-corners-sm);
+  height: 34px;
+  border-color: transparent;
+  outline: none;
+  transition: all 0.2s;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+
+.login-form input:focus,
+.login-form input:active {
+  border-color: var(--light-green);
+}
+
+.login-form .btn-action {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.login-form a:not(.btn-action) {
+  text-align: left;
+}
+
+.login-form a {
+  margin-bottom: 10px;
+  transition: all 0.2s;
+}
+
+.login-form a:not(.btn-action):hover {
+  color: var(--light-green);
+}

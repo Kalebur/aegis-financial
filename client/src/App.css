@@ -8,6 +8,7 @@
   --font-site-name: "Playfair Display";
   --font-default: "Inter";
   --sidebar-width: 15.78%;
+  --rounded-corners-sm: 8px;
   --rounded-corners: 12px;
 }
 
@@ -79,6 +80,7 @@ li {
   color: white;
   border-radius: 8px;
   text-align: center;
+  transition: all 0.2s;
 }
 
 .btn-action:hover,
