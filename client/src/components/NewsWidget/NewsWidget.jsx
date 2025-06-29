@@ -8,7 +8,7 @@ export const NewsWidget = ({ articles }) => {
 
   return (
     <div className="widget news-widget">
-      <p className="news-title">Local News</p>
+      <p className="widget-title">Local News</p>
       <ul id="news-list">
         {articles.map((article) => (
           <li key={article.guid}>

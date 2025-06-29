@@ -1,6 +1,6 @@
 .right-sidebar {
   flex-basis: var(--sidebar-width);
-  padding-top: 20px;
+  padding: 20px 14px;
 }
 
 .login-form {
