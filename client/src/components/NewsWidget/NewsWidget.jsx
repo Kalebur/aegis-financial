@@ -1,4 +1,5 @@
 import "./NewsWidget.css";
+import { formatDateToLong } from "../../utils/dateFormatter";
 
 export const NewsWidget = ({ articles }) => {
   const sliceTitle = (title) => {
@@ -12,7 +13,9 @@ export const NewsWidget = ({ articles }) => {
         {articles.map((article) => (
           <li key={article.guid}>
             {/* <p>{JSON.stringify(article)}</p> */}
-            <p className="published-date">{article.pubDate}</p>
+            <p className="published-date">
+              {formatDateToLong(article.pubDate)}
+            </p>
             <a className="headline-link" href={article.link} target="__blank">
               {sliceTitle(article.title)}
             </a>
