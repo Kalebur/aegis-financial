@@ -1,0 +1,5 @@
+.main-content {
+  margin-top: 20px;
+  color: white;
+  width: calc(100vw - (2 * var(--sidebar-width)));
+}

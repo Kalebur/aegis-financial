@@ -1,0 +1,51 @@
+.service-blurb {
+  height: 400px;
+  display: flex;
+  gap: 18px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.service-blurb .blurb-content {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  align-items: center;
+}
+
+.service-blurb .blurb-content .blurb-title {
+  font-weight: 600;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.service-blurb .blurb-content .blurb-title::after {
+  content: "";
+  height: 8px;
+  border-radius: var(--rounded-corners);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  background-color: var(--light-green);
+}
+
+.service-blurb .blurb-content .blurb-body {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.service-blurb .blurb-content a {
+  font-size: 40px;
+  font-weight: 900;
+  padding: 15px;
+  width: 90%;
+  margin-bottom: 20px;
+  margin-top: auto;
+}
+
+.service-blurb:nth-child(even) .blurb-content {
+  order: 1;
+}

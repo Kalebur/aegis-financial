@@ -7,7 +7,7 @@
   --transparent-dark-green: rgba(0, 33, 28, 0.5);
   --font-site-name: "Playfair Display";
   --font-default: "Inter";
-  --sidebar-width: 15.78%;
+  --sidebar-width: 15.78125%;
   --rounded-corners-sm: 8px;
   --rounded-corners: 12px;
 }
@@ -41,6 +41,10 @@ main {
 
 li {
   list-style-type: none;
+}
+
+button {
+  border: none;
 }
 
 .App {
