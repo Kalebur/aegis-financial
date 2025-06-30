@@ -46,6 +46,10 @@
   margin-top: auto;
 }
 
+.service-blurb img {
+  border-radius: var(--rounded-corners);
+}
+
 .service-blurb:nth-child(even) .blurb-content {
   order: 1;
 }
