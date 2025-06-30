@@ -1,6 +1,6 @@
 import "./App.css";
-import { Header } from "./components/Header/Header.jsx";
-import { Footer } from "./components/Footer/Footer.jsx";
+import { Header } from "./components";
+import { Footer } from "./components";
 import { AllRoutes } from "./routes/AllRoutes.jsx";
 
 function App() {

@@ -1,7 +1,7 @@
 import "./WeatherAndNewsBar.css";
 
-import { useFetch } from "../../hooks";
-import { WeatherWidget } from "..";
+import { useFetch } from "../../../../hooks";
+import { WeatherWidget } from "../../../../components";
 import { useMemo } from "react";
 import { NewsWidget } from "../NewsWidget/NewsWidget";
 
