@@ -3,7 +3,12 @@ import { formatDateToLong } from "../../../../utils/dateFormatter";
 
 export const NewsWidget = ({ articles }) => {
   const sliceTitle = (title) => {
-    return title.slice(0, title.lastIndexOf("-") - 1);
+    const separator = " - ";
+    const lastIndexOfSeparator = title.lastIndexOf(separator);
+
+    if (lastIndexOfSeparator === -1) return title.trim();
+
+    return title.slice(0, lastIndexOfSeparator);
   };
 
   return (
