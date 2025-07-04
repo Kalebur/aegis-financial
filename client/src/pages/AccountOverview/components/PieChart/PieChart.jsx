@@ -32,7 +32,7 @@ export const PieChart = ({ transactions }) => {
         label: "Amount",
         data,
         backgroundColor,
-        borderColor: "#ffffff",
+        borderColor: "#000",
         borderWidth: 1,
       },
     ],
@@ -68,7 +68,14 @@ export const PieChart = ({ transactions }) => {
   };
 
   return (
-    <div style={{ width: "100%", height: "400px" }}>
+    <div
+      style={{
+        width: "600px",
+        height: "400px",
+        backgroundColor: "#FFF",
+        padding: "1rem",
+      }}
+    >
       <Pie data={chartData} options={options} />
     </div>
   );
