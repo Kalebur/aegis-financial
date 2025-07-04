@@ -20,8 +20,6 @@ export const BarChart = ({ transactions }) => {
     })
     .reverse();
 
-  // console.log(last7Days);
-
   const spendingPerDay = last7Days.map((date) => {
     const total = transactions
       .filter((txn) => txn.date.getDate() === date.getDate())
@@ -36,8 +34,6 @@ export const BarChart = ({ transactions }) => {
       day: "2-digit",
     });
   });
-
-  // console.log(dayLabels);
 
   const data = {
     labels: dayLabels,
@@ -86,7 +82,7 @@ export const BarChart = ({ transactions }) => {
   };
 
   return (
-    <div style={{ width: "100%", height: "400px" }}>
+    <div style={{ width: "600px", height: "400px", backgroundColor: "#FFF" }}>
       <Bar data={data} options={options} />
     </div>
   );
