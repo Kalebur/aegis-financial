@@ -1,6 +1,5 @@
-import { BarChart } from "./components/BarChart/BarChart.jsx";
 import { LeftSidebar } from "./components/LeftSidebar/LeftSidebar.jsx";
-import { PieChart } from "./components/PieChart/PieChart.jsx";
+import { TransactionCharts } from "./components/TransactionCharts/TransactionCharts.jsx";
 import { RightSidebar } from "./components/RightSidebar/RightSidebar.jsx";
 
 const transactions = [
@@ -45,6 +44,7 @@ export const AccountOverview = () => {
   return (
     <main>
       <LeftSidebar />
+      <TransactionCharts transactions={transactions} />
       <RightSidebar />
     </main>
   );

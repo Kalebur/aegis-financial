@@ -1,5 +1,6 @@
 .right-accounts-bar {
   height: var(--body-height);
   background-color: var(--transparent-dark-green);
-  flex-basis: 15vw;
+  flex-basis: 10vw;
+  color: white;
 }
