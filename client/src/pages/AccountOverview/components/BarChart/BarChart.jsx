@@ -82,7 +82,7 @@ export const BarChart = ({ transactions }) => {
   };
 
   return (
-    <div style={{ width: "600px", height: "400px", backgroundColor: "#FFF" }}>
+    <div style={{ height: "300px", backgroundColor: "#FFF", flex: 1 }}>
       <Bar data={data} options={options} />
     </div>
   );

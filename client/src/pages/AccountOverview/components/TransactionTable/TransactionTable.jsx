@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const TransactionTable = ({ transactions }) => {
+export const TransactionTable = ({ transactions }) => {
   console.log(transactions);
   const tableRef = useRef(null);
   const tbodyRef = useRef(null);
@@ -16,11 +16,10 @@ const TransactionTable = ({ transactions }) => {
       const tableBottom = tableRef.current.getBoundingClientRect().bottom;
       const remainingHeight = pageHeight - tableBottom;
 
-      const neededEmptyRows = Math.floor(remainingHeight / rowHeight);
+      const neededEmptyRows = Math.floor(remainingHeight / rowHeight) - 1;
       setEmptyRows(neededEmptyRows > 0 ? neededEmptyRows : 0);
     };
 
-    // Calculate after DOM update
     setTimeout(calculateEmptyRows, 0);
 
     window.addEventListener("resize", calculateEmptyRows);
@@ -74,5 +73,3 @@ const tdStyle = {
   height: "40px",
   backgroundColor: "white",
 };
-
-export default TransactionTable;

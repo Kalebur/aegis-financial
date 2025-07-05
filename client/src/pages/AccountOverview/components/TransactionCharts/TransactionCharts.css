@@ -1,3 +1,9 @@
 .transaction-charts {
   flex: 1;
 }
+
+.graph-container {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 2px;
+}

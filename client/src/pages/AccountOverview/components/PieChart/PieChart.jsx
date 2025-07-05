@@ -70,8 +70,7 @@ export const PieChart = ({ transactions }) => {
   return (
     <div
       style={{
-        width: "600px",
-        height: "400px",
+        height: "300px",
         backgroundColor: "#FFF",
         padding: "1rem",
       }}
