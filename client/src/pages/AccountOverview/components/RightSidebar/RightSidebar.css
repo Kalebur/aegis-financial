@@ -4,3 +4,7 @@
   flex-basis: 10vw;
   color: white;
 }
+
+.totalExpenses span {
+  color: #ff9696;
+}
