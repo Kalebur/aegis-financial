@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export const TransactionTable = ({ transactions }) => {
-  console.log(transactions);
   const tableRef = useRef(null);
   const tbodyRef = useRef(null);
   const [emptyRows, setEmptyRows] = useState(0);
