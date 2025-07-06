@@ -18,13 +18,25 @@ export const RightSidebar = ({ account }) => {
     setTotalExpenses(things);
   };
 
+  const getTotalIncome = (transactions) => {
+    const today = new Date();
+    const things = transactions
+      .filter(
+        (txn) =>
+          txn.date.getMonth() === today.getMonth() && txn.type === "credit"
+      )
+      .reduce((acc, txn) => (acc += txn.amount), 0);
+    setTotalIncome(things);
+  };
+
   useEffect(() => {
     getTotalExpenses(account.transactions);
+    getTotalIncome(account.transactions);
   }, []);
 
   return (
     <section className="right-accounts-bar">
-      <p className="totalIncome"></p>
+      <p className="totalIncome">Total Income: ${totalIncome}</p>
       <p className="totalExpenses">
         Total Expenses:
         <span>
