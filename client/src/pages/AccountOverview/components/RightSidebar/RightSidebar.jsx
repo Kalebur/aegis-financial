@@ -29,9 +29,18 @@ export const RightSidebar = ({ account }) => {
     setTotalIncome(things);
   };
 
+  const calculateCurrentBalance = (account) => {
+    const currentMonth = new Date().getMonth();
+    const startBalance = account.past12MonthBalances.find(
+      (bal) => bal.month === currentMonth
+    )?.startingBalance;
+    setCurrentBalance(startBalance + totalIncome - totalExpenses);
+  };
+
   useEffect(() => {
     getTotalExpenses(account.transactions);
     getTotalIncome(account.transactions);
+    calculateCurrentBalance(account);
   }, []);
 
   return (
@@ -43,7 +52,7 @@ export const RightSidebar = ({ account }) => {
           {totalExpenses > 0 ? `-$${JSON.stringify(totalExpenses)}` : 0}
         </span>
       </p>
-      <p className="currentBalance"></p>
+      <p className="currentBalance">Current Balance: ${currentBalance}</p>
       <p className="fico-score">FICO Score: {ficoScore}</p>
     </section>
   );
