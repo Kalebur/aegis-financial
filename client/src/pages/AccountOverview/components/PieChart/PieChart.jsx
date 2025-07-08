@@ -1,3 +1,4 @@
+import "./PieChart.css";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
@@ -13,6 +14,8 @@ const categoryColors = {
 
 export const PieChart = ({ transactions }) => {
   const categoryTotals = transactions.reduce((acc, txn) => {
+    if (txn.type && txn.type === "credit") return acc;
+
     const { category, amount } = txn;
     acc[category] = (acc[category] || 0) + amount;
     return acc;
@@ -68,13 +71,7 @@ export const PieChart = ({ transactions }) => {
   };
 
   return (
-    <div
-      style={{
-        flexBasis: "40%",
-        backgroundColor: "#FFF",
-        padding: "1rem",
-      }}
-    >
+    <div className="pie-chart">
       <Pie data={chartData} options={options} />
     </div>
   );
