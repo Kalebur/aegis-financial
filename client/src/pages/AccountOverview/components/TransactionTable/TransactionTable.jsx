@@ -1,3 +1,4 @@
+import "./TransactionTable.css";
 import React, { useEffect, useRef, useState } from "react";
 
 export const TransactionTable = ({ transactions }) => {
@@ -31,10 +32,7 @@ export const TransactionTable = ({ transactions }) => {
 
   return (
     <div id="table-container">
-      <table
-        ref={tableRef}
-        style={{ width: "100%", borderCollapse: "collapse" }}
-      >
+      <table className="transaction-table" ref={tableRef}>
         <thead>
           <tr>
             <th style={thStyle}>Date</th>

@@ -1,0 +1,16 @@
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top-right-radius: var(--rounded-corners);
+  border-top-left-radius: var(--rounded-corners);
+  overflow: hidden;
+  border: 1px solid var(--dark-green);
+}
+
+.transaction-table th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.transaction-table th:last-child {
+  border-top-right-radius: 10px;
+}
