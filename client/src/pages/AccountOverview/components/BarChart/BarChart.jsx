@@ -36,13 +36,17 @@ export const BarChart = ({ transactions }) => {
     });
   });
 
+  const lightGreen = getComputedStyle(document.documentElement)
+    .getPropertyValue("--light-green")
+    .trim();
+
   const data = {
     labels: dayLabels,
     datasets: [
       {
         label: "Daily Spending",
         data: spendingPerDay,
-        backgroundColor: "#007bff",
+        backgroundColor: lightGreen,
         borderRadius: 4,
       },
     ],
