@@ -27,6 +27,7 @@ body {
 body {
   background-color: var(--mid-green);
   font-family: var(--font-default);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -37,7 +38,7 @@ a {
 }
 
 main {
-  min-height: calc(100vh - 150px);
+  flex: 1;
 }
 
 li {

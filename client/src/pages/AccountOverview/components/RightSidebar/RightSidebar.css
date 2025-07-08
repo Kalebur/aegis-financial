@@ -1,11 +1,20 @@
 .right-accounts-bar {
-  height: var(--body-height);
+  min-height: var(--body-height);
   background-color: var(--transparent-dark-green);
   flex-basis: 15vw;
   color: white;
   text-align: left;
+  padding: 20px;
+}
+
+.right-accounts-bar p {
+  margin-bottom: 20px;
 }
 
 .totalExpenses span {
   color: #ff9696;
+}
+
+.fico-score {
+  margin-top: 40px;
 }
