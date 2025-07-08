@@ -1,0 +1,5 @@
+.bar-chart {
+  background-color: #fff;
+  flex: 1;
+  border-bottom-right-radius: var(--rounded-corners);
+}

@@ -2,4 +2,5 @@
   flex-basis: 40%;
   background-color: #fff;
   padding: 1rem;
+  border-bottom-left-radius: var(--rounded-corners);
 }

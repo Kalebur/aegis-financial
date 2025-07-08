@@ -1,3 +1,4 @@
+import "./BarChart.css";
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -82,7 +83,7 @@ export const BarChart = ({ transactions }) => {
   };
 
   return (
-    <div style={{ backgroundColor: "#FFF", flex: 1 }}>
+    <div className="bar-chart">
       <Bar data={data} options={options} />
     </div>
   );
