@@ -57,7 +57,7 @@ export const BarChart = ({ transactions }) => {
       y: {
         beginAtZero: true,
         ticks: {
-          stepSize: 100,
+          stepSize: 200,
           callback: (value) =>
             new Intl.NumberFormat("en-US", {
               style: "currency",
