@@ -31,6 +31,8 @@ export const generateRandomTransactions = () => {
   const startDate = new Date(today);
   startDate.setDate(today.getDate() - 29);
 
+  const transactionsByDay = {};
+
   const getRandomDate = () => {
     const date = new Date(
       startDate.getTime() +
@@ -40,30 +42,19 @@ export const generateRandomTransactions = () => {
     return date;
   };
 
-  const formatDate = (date) => date.toISOString().split("T")[0];
-
-  const transactionsByDay = {};
-
-  const addTransaction = (transaction) => {
-    const dateStr = formatDate(transaction.date);
-    if (!transactionsByDay[dateStr]) {
-      transactionsByDay[dateStr] = [];
-    }
-    if (transactionsByDay[dateStr].length < 15) {
-      transactionsByDay[dateStr].push(transaction);
-      transactions.push(transaction);
-    }
-  };
-
   // Rent: 1 transaction
   const rentDate = getRandomDate();
   const rentAmount = Math.floor(Math.random() * (2000 - 600 + 1)) + 600;
-  addTransaction({
-    date: rentDate,
-    vendor: "Landlord",
-    category: "Rent",
-    amount: rentAmount,
-  });
+  addTransaction(
+    transactions,
+    {
+      date: rentDate,
+      vendor: "Landlord",
+      category: "Rent",
+      amount: rentAmount,
+    },
+    transactionsByDay
+  );
 
   // Utilities: 1 per vendor
   utilityVendors.forEach((vendor) => {
@@ -79,19 +70,23 @@ export const generateRandomTransactions = () => {
       amount = Math.floor(Math.random() * (250 - 35 + 1)) + 35;
     }
 
-    addTransaction({
-      date,
-      vendor,
-      category: "Utilities",
-      amount,
-    });
+    addTransaction(
+      transactions,
+      {
+        date,
+        vendor,
+        category: "Utilities",
+        amount,
+      },
+      transactionsByDay
+    );
   });
 
   // Income: 2–3, 14 days apart, same amount, all Fridays
   const fridays = [];
   for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
     if (d.getDay() === 5) {
-      // Friday
+      d.setHours(0, 0, 0, 0);
       fridays.push(new Date(d));
     }
   }
@@ -104,12 +99,16 @@ export const generateRandomTransactions = () => {
 
   for (let i = 0; i < numIncome; i++) {
     const date = fridays[startIdx + i * 2];
-    addTransaction({
-      date,
-      vendor: "Employer",
-      category: "Income",
-      amount: incomeAmount,
-    });
+    addTransaction(
+      transactions,
+      {
+        date,
+        vendor: "Employer",
+        category: "Income",
+        amount: incomeAmount,
+      },
+      transactionsByDay
+    );
   }
 
   // Food transactions (random amount)
@@ -118,12 +117,16 @@ export const generateRandomTransactions = () => {
     const date = getRandomDate();
     const vendor = foodVendors[Math.floor(Math.random() * foodVendors.length)];
     const amount = Math.floor(Math.random() * (100 - 10 + 1)) + 10;
-    addTransaction({
-      date,
-      vendor,
-      category: "Food",
-      amount,
-    });
+    addTransaction(
+      transactions,
+      {
+        date,
+        vendor,
+        category: "Food",
+        amount,
+      },
+      transactionsByDay
+    );
   }
 
   // Entertainment transactions
@@ -135,13 +138,30 @@ export const generateRandomTransactions = () => {
         Math.floor(Math.random() * entertainmentVendors.length)
       ];
     const amount = Math.floor(Math.random() * (200 - 50 + 1)) + 50;
-    addTransaction({
-      date,
-      vendor,
-      category: "Entertainment",
-      amount,
-    });
+    addTransaction(
+      transactions,
+      {
+        date,
+        vendor,
+        category: "Entertainment",
+        amount,
+      },
+      transactionsByDay
+    );
   }
 
   return transactions.sort((a, b) => a.date - b.date);
 };
+
+const addTransaction = (transactionList, transaction, dailyTransactions) => {
+  const dateStr = formatDate(transaction.date);
+  if (!dailyTransactions[dateStr]) {
+    dailyTransactions[dateStr] = [];
+  }
+  if (dailyTransactions[dateStr].length < 15) {
+    dailyTransactions[dateStr].push(transaction);
+    transactionList.push(transaction);
+  }
+};
+
+const formatDate = (date) => date.toISOString().split("T")[0];
