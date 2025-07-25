@@ -1,3 +1,5 @@
+import { getRandomDate } from "./dateUtils.js";
+
 export const generateRandomTransactions = () => {
   const foodVendors = [
     "McDonalds",
@@ -32,15 +34,6 @@ export const generateRandomTransactions = () => {
   startDate.setDate(today.getDate() - 29);
 
   const transactionsByDay = {};
-
-  const getRandomDate = () => {
-    const date = new Date(
-      startDate.getTime() +
-        Math.random() * (today.getTime() - startDate.getTime())
-    );
-    date.setHours(0, 0, 0, 0);
-    return date;
-  };
 
   // Rent: 1 transaction
   const rentDate = getRandomDate();

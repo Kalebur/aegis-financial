@@ -1,4 +1,4 @@
-import { formatDateToLong } from "../utils/dateFormatter";
+import { formatDateToLong } from "../utils/dateUtils.js";
 
 test("converts date to long format", () => {
   const dateString = "Thu, 26 Jun 2025 15:02:10 GMT";

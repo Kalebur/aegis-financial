@@ -1,5 +1,5 @@
 import "./NewsWidget.css";
-import { formatDateToLong } from "../../../../utils/dateFormatter";
+import { formatDateToLong } from "../../../../utils/dateUtils.js";
 
 export const NewsWidget = ({ articles }) => {
   const sliceTitle = (title) => {
