@@ -1,4 +1,4 @@
-import { getRandomDate } from "./dateUtils.js";
+import { getRandomDate, getFridaysInRange } from "./dateUtils.js";
 
 export const generateRandomTransactions = () => {
   const foodVendors = [
@@ -76,13 +76,7 @@ export const generateRandomTransactions = () => {
   });
 
   // Income: 2–3, 14 days apart, same amount, all Fridays
-  const fridays = [];
-  for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
-    if (d.getDay() === 5) {
-      d.setHours(0, 0, 0, 0);
-      fridays.push(new Date(d));
-    }
-  }
+  const fridays = getFridaysInRange(startDate, today);
 
   const numIncome = Math.floor(Math.random() * 2) + 2; // 2 or 3
   const startIdx = Math.floor(

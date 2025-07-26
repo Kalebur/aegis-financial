@@ -19,3 +19,15 @@ export function getRandomDate() {
   date.setHours(0, 0, 0, 0);
   return date;
 }
+
+export function getFridaysInRange(startDate, endDate) {
+  const fridays = [];
+  for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+    if (d.getDay() === 5) {
+      d.setHours(0, 0, 0, 0);
+      fridays.push(new Date(d));
+    }
+  }
+
+  return [...fridays];
+}
