@@ -9,8 +9,7 @@ export const RightSidebar = ({ account }) => {
 
   useEffect(() => {
     const today = new Date();
-    console.log("TRANSACTIONS:");
-    console.log(account.transactions);
+
     const expenses = account.transactions
       .filter(
         (txn) =>
@@ -45,7 +44,9 @@ export const RightSidebar = ({ account }) => {
         Total Expenses:
         <span>{totalExpenses > 0 ? `-$${totalExpenses}` : 0}</span>
       </p>
-      <p className="currentBalance">Current Balance: ${currentBalance}</p>
+      <p className="currentBalance">
+        Current Balance: ${currentBalance.toFixed(2)}
+      </p>
       <p className="fico-score">FICO Score: {ficoScore}</p>
     </section>
   );
