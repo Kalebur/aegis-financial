@@ -141,6 +141,7 @@ export const generateRandomTransactions = () => {
 };
 
 const addTransaction = (transactionList, transaction, dailyTransactions) => {
+  if (!transaction.date) return;
   const dateStr = formatDate(transaction.date);
   if (!dailyTransactions[dateStr]) {
     dailyTransactions[dateStr] = [];
