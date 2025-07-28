@@ -9,6 +9,8 @@ export const RightSidebar = ({ account }) => {
 
   useEffect(() => {
     const today = new Date();
+    console.log("TRANSACTIONS:");
+    console.log(account.transactions);
     const expenses = account.transactions
       .filter(
         (txn) =>

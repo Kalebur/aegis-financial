@@ -45,6 +45,7 @@ export const generateRandomTransactions = () => {
       vendor: "Landlord",
       category: "Rent",
       amount: rentAmount,
+      type: "debit",
     },
     transactionsByDay
   );
@@ -70,6 +71,7 @@ export const generateRandomTransactions = () => {
         vendor,
         category: "Utilities",
         amount,
+        type: "debit",
       },
       transactionsByDay
     );
@@ -93,6 +95,7 @@ export const generateRandomTransactions = () => {
         vendor: "Employer",
         category: "Income",
         amount: incomeAmount,
+        type: "credit",
       },
       transactionsByDay
     );
@@ -111,6 +114,7 @@ export const generateRandomTransactions = () => {
         vendor,
         category: "Food",
         amount,
+        type: "debit",
       },
       transactionsByDay
     );
@@ -132,6 +136,7 @@ export const generateRandomTransactions = () => {
         vendor,
         category: "Entertainment",
         amount,
+        type: "debit",
       },
       transactionsByDay
     );
