@@ -9,8 +9,7 @@ export const RightSidebar = ({ account }) => {
 
   useEffect(() => {
     const today = new Date();
-    console.log("TRANSACTIONS:");
-    console.log(account.transactions);
+
     const expenses = account.transactions
       .filter(
         (txn) =>
@@ -35,7 +34,11 @@ export const RightSidebar = ({ account }) => {
       account.past12MonthBalances.find((bal) => bal.month === currentMonth)
         ?.startingBalance || 0;
 
-    setCurrentBalance(startBalance + totalIncome - totalExpenses);
+    let bal = startBalance + totalIncome - totalExpenses;
+    if (bal < 0) {
+      bal += bal + (Math.round(Math.random() * 1000) + 50);
+    }
+    setCurrentBalance(bal);
   }, [totalIncome, totalExpenses, account.past12MonthBalances]);
 
   return (
@@ -45,7 +48,9 @@ export const RightSidebar = ({ account }) => {
         Total Expenses:
         <span>{totalExpenses > 0 ? `-$${totalExpenses}` : 0}</span>
       </p>
-      <p className="currentBalance">Current Balance: ${currentBalance}</p>
+      <p className="currentBalance">
+        Current Balance: ${currentBalance.toFixed(2)}
+      </p>
       <p className="fico-score">FICO Score: {ficoScore}</p>
     </section>
   );
