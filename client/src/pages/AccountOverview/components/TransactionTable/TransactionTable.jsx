@@ -1,5 +1,6 @@
 import "./TransactionTable.css";
-import React, { useEffect, useRef, useState } from "react";
+import { formatDateToLong } from "../../../../utils/dateUtils.js";
+import { useEffect, useRef, useState } from "react";
 
 export const TransactionTable = ({ transactions }) => {
   const tableRef = useRef(null);
@@ -44,7 +45,7 @@ export const TransactionTable = ({ transactions }) => {
         <tbody ref={tbodyRef}>
           {sortedTransactions.map((tx, index) => (
             <tr key={index}>
-              <td style={tdStyle}>{tx.date.toISOString()}</td>
+              <td style={tdStyle}>{formatDateToLong(tx.date.toISOString())}</td>
               <td style={tdStyle}>{tx.vendor}</td>
               <td style={tdStyle}>{tx.category}</td>
               <td style={tdStyle}>${parseFloat(tx.amount).toFixed(2)}</td>

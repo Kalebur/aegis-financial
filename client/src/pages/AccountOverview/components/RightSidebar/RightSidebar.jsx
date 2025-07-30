@@ -34,11 +34,7 @@ export const RightSidebar = ({ account }) => {
       account.past12MonthBalances.find((bal) => bal.month === currentMonth)
         ?.startingBalance || 0;
 
-    let bal = startBalance + totalIncome - totalExpenses;
-    if (bal < 0) {
-      bal += bal + (Math.round(Math.random() * 1000) + 50);
-    }
-    setCurrentBalance(bal);
+    setCurrentBalance(Math.abs(startBalance + totalIncome - totalExpenses));
   }, [totalIncome, totalExpenses, account.past12MonthBalances]);
 
   return (
